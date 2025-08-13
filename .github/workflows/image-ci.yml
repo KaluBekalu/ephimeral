@@ -17,7 +17,7 @@ jobs:
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
       
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ephimeral-dev:$(date +%s)
+      run: docker build . -t ephimeral-dev:latest
       
     - name: Push to Docker Hub
-      run: docker push kalbekalu/ephimeral-dev:$(date +%s)
+      run: docker push kalbekalu/ephimeral-dev:latest
